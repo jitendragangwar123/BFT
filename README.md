@@ -84,21 +84,21 @@ $ forge coverage
 
 ### 🌍 Deployment to a Testnet or Mainnet
 
-#### 1. Setup Environment Variables
+   #### 1. Setup Environment Variables
 
-You'll need to set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file in your project directory.
+   You'll need to set your `SEPOLIA_RPC_URL` and `PRIVATE_KEY` as environment variables. You can add them to a `.env` file in your project directory.
 
-Optionally, you can also add your `ETHERSCAN_API_KEY` if you want to verify your contract on [Etherscan](https://etherscan.io/).
+   Optionally, you can also add your `ETHERSCAN_API_KEY` if you want to verify your contract on [Etherscan](https://etherscan.io/).
 
-#### 2. Get Testnet ETH
+   #### 2. Get Testnet ETH
 
-Head over to [faucets.chain.link](https://faucets.chain.link/) to get some testnet ETH. The ETH should show up in your MetaMask wallet shortly.
+   Head over to [faucets.chain.link](https://faucets.chain.link/) to get some testnet ETH. The ETH should show up in your MetaMask wallet shortly.
 
-#### 3. Deploy to Sepolia Testnet
+   #### 3. Deploy to Sepolia Testnet
 
-To deploy your contract to the **Sepolia** testnet, run:
+   To deploy your contract to the **Sepolia** testnet, run:
 
-```
-$ make deploy ARGS="--network sepolia"
-```
+   ```
+   $ make deploy ARGS="--network sepolia"
+   ```
 

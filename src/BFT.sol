@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.24;
 
-import {ERC20,IERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import {ERC20, IERC20} from "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
 import {ReentrancyMock} from "@openzeppelin/contracts/mocks/ReentrancyMock.sol";
 
@@ -12,16 +12,16 @@ import {ReentrancyMock} from "@openzeppelin/contracts/mocks/ReentrancyMock.sol";
  */
 contract BFT is ERC20, Ownable, ReentrancyMock {
     /// @notice Total initial supply of tokens.
-    uint256 public constant INITIAL_SUPPLY = 1_000_000 * 10 ** 18; 
+    uint256 public constant INITIAL_SUPPLY = 1_000_000 * 10 ** 18;
 
     /// @notice Percentage of total supply allocated to the team.
-    uint256 public constant TEAM_PERCENTAGE = 20; 
+    uint256 public constant TEAM_PERCENTAGE = 20;
     /// @notice Percentage of total supply allocated to marketing.
-    uint256 public constant MARKETING_PERCENTAGE = 30; 
+    uint256 public constant MARKETING_PERCENTAGE = 30;
     /// @notice Percentage of total supply allocated to development.
-    uint256 public constant DEVELOPMENT_PERCENTAGE = 40; 
+    uint256 public constant DEVELOPMENT_PERCENTAGE = 40;
     /// @notice Percentage of total supply allocated to the community.
-    uint256 public constant COMMUNITY_PERCENTAGE = 10; 
+    uint256 public constant COMMUNITY_PERCENTAGE = 10;
 
     /// @notice Address of the team wallet.
     address public teamWallet;
@@ -66,17 +66,13 @@ contract BFT is ERC20, Ownable, ReentrancyMock {
      * @param _developmentWallet Address of the development wallet.
      * @param _communityWallet Address of the community wallet.
      */
-    constructor(
-        address _teamWallet,
-        address _marketingWallet,
-        address _developmentWallet,
-        address _communityWallet
-    ) ERC20("BFT", "BFT") Ownable(msg.sender) {
+    constructor(address _teamWallet, address _marketingWallet, address _developmentWallet, address _communityWallet)
+        ERC20("BFT", "BFT")
+        Ownable(msg.sender)
+    {
         require(
-            _teamWallet != address(0) &&
-                _marketingWallet != address(0) &&
-                _developmentWallet != address(0) &&
-                _communityWallet != address(0),
+            _teamWallet != address(0) && _marketingWallet != address(0) && _developmentWallet != address(0)
+                && _communityWallet != address(0),
             "Invalid wallet address"
         );
 
@@ -130,10 +126,8 @@ contract BFT is ERC20, Ownable, ReentrancyMock {
         address _communityWallet
     ) external onlyOwner {
         require(
-            _teamWallet != address(0) &&
-                _marketingWallet != address(0) &&
-                _developmentWallet != address(0) &&
-                _communityWallet != address(0),
+            _teamWallet != address(0) && _marketingWallet != address(0) && _developmentWallet != address(0)
+                && _communityWallet != address(0),
             "Invalid wallet address"
         );
 
